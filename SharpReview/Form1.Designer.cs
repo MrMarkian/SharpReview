@@ -30,7 +30,6 @@
         {
             this.SubjectDropDown = new System.Windows.Forms.ComboBox();
             this.CardsList = new System.Windows.Forms.ListBox();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.SubjectLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,52 +46,50 @@
             this.editFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeAllLoadedCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuestionLabel = new System.Windows.Forms.Label();
             this.AnswerInputBox = new System.Windows.Forms.TextBox();
             this.CheckAnswerButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Single = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.Multi = new System.Windows.Forms.TabPage();
             this.Info = new System.Windows.Forms.TabPage();
             this.infoAnswerBox = new System.Windows.Forms.RichTextBox();
-            this.removeAllLoadedCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Single.SuspendLayout();
             this.Info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SubjectDropDown
             // 
+            this.SubjectDropDown.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.SubjectDropDown.FormattingEnabled = true;
-            this.SubjectDropDown.Location = new System.Drawing.Point(10, 63);
+            this.SubjectDropDown.Location = new System.Drawing.Point(11, 34);
             this.SubjectDropDown.Name = "SubjectDropDown";
-            this.SubjectDropDown.Size = new System.Drawing.Size(178, 21);
+            this.SubjectDropDown.Size = new System.Drawing.Size(228, 21);
             this.SubjectDropDown.TabIndex = 0;
             this.SubjectDropDown.SelectedIndexChanged += new System.EventHandler(this.SubjectDropDown_SelectedIndexChanged);
             // 
             // CardsList
             // 
+            this.CardsList.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.CardsList.FormattingEnabled = true;
-            this.CardsList.Location = new System.Drawing.Point(11, 94);
+            this.CardsList.Location = new System.Drawing.Point(12, 73);
             this.CardsList.Name = "CardsList";
-            this.CardsList.Size = new System.Drawing.Size(178, 446);
+            this.CardsList.Size = new System.Drawing.Size(227, 446);
             this.CardsList.TabIndex = 1;
             this.CardsList.SelectedIndexChanged += new System.EventHandler(this.CardsList_SelectedIndexChanged);
             // 
-            // refreshButton
-            // 
-            this.refreshButton.Location = new System.Drawing.Point(211, 58);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(161, 26);
-            this.refreshButton.TabIndex = 3;
-            this.refreshButton.Text = "Refresh";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
             // SubjectLabel
             // 
-            this.SubjectLabel.Location = new System.Drawing.Point(11, 40);
+            this.SubjectLabel.Location = new System.Drawing.Point(12, 11);
             this.SubjectLabel.Name = "SubjectLabel";
             this.SubjectLabel.Size = new System.Drawing.Size(80, 19);
             this.SubjectLabel.TabIndex = 4;
@@ -103,7 +100,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.fileToolStripMenuItem, this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(539, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(786, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -181,6 +178,7 @@
             this.editFlashCardToolStripMenuItem.Name = "editFlashCardToolStripMenuItem";
             this.editFlashCardToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.editFlashCardToolStripMenuItem.Text = "Edit FlashCard";
+            this.editFlashCardToolStripMenuItem.Click += new System.EventHandler(this.editFlashCardToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -194,25 +192,35 @@
             this.deleteFlashCardToolStripMenuItem.Text = "Delete FlashCard";
             this.deleteFlashCardToolStripMenuItem.Click += new System.EventHandler(this.deleteFlashCardToolStripMenuItem_Click_1);
             // 
+            // removeAllLoadedCardsToolStripMenuItem
+            // 
+            this.removeAllLoadedCardsToolStripMenuItem.Name = "removeAllLoadedCardsToolStripMenuItem";
+            this.removeAllLoadedCardsToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.removeAllLoadedCardsToolStripMenuItem.Text = "Remove All Loaded Cards";
+            this.removeAllLoadedCardsToolStripMenuItem.Click += new System.EventHandler(this.removeAllLoadedCardsToolStripMenuItem_Click);
+            // 
             // QuestionLabel
             // 
+            this.QuestionLabel.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionLabel.Font = new System.Drawing.Font("Anka/Coder", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.QuestionLabel.Location = new System.Drawing.Point(214, 100);
+            this.QuestionLabel.Location = new System.Drawing.Point(24, 73);
             this.QuestionLabel.Name = "QuestionLabel";
-            this.QuestionLabel.Size = new System.Drawing.Size(312, 115);
+            this.QuestionLabel.Size = new System.Drawing.Size(455, 267);
             this.QuestionLabel.TabIndex = 6;
             this.QuestionLabel.Text = "Question";
             // 
             // AnswerInputBox
             // 
-            this.AnswerInputBox.Location = new System.Drawing.Point(6, 23);
+            this.AnswerInputBox.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnswerInputBox.Location = new System.Drawing.Point(20, 37);
             this.AnswerInputBox.Name = "AnswerInputBox";
-            this.AnswerInputBox.Size = new System.Drawing.Size(301, 20);
+            this.AnswerInputBox.Size = new System.Drawing.Size(467, 20);
             this.AnswerInputBox.TabIndex = 7;
             // 
             // CheckAnswerButton
             // 
-            this.CheckAnswerButton.Location = new System.Drawing.Point(196, 63);
+            this.CheckAnswerButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CheckAnswerButton.Location = new System.Drawing.Point(390, 136);
             this.CheckAnswerButton.Name = "CheckAnswerButton";
             this.CheckAnswerButton.Size = new System.Drawing.Size(107, 27);
             this.CheckAnswerButton.TabIndex = 8;
@@ -225,32 +233,42 @@
             this.tabControl1.Controls.Add(this.Single);
             this.tabControl1.Controls.Add(this.Multi);
             this.tabControl1.Controls.Add(this.Info);
-            this.tabControl1.Location = new System.Drawing.Point(208, 261);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Location = new System.Drawing.Point(0, 343);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(317, 122);
+            this.tabControl1.Size = new System.Drawing.Size(513, 197);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 9;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // Single
             // 
+            this.Single.Controls.Add(this.label1);
             this.Single.Controls.Add(this.AnswerInputBox);
             this.Single.Controls.Add(this.CheckAnswerButton);
             this.Single.Location = new System.Drawing.Point(4, 22);
             this.Single.Name = "Single";
             this.Single.Padding = new System.Windows.Forms.Padding(3);
-            this.Single.Size = new System.Drawing.Size(309, 96);
+            this.Single.Size = new System.Drawing.Size(505, 171);
             this.Single.TabIndex = 0;
             this.Single.Text = "Single Answer";
             this.Single.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(20, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Type Answer:";
             // 
             // Multi
             // 
             this.Multi.Location = new System.Drawing.Point(4, 22);
             this.Multi.Name = "Multi";
             this.Multi.Padding = new System.Windows.Forms.Padding(3);
-            this.Multi.Size = new System.Drawing.Size(309, 96);
+            this.Multi.Size = new System.Drawing.Size(509, 171);
             this.Multi.TabIndex = 1;
             this.Multi.Text = "Multi Answers";
             this.Multi.UseVisualStyleBackColor = true;
@@ -260,37 +278,51 @@
             this.Info.Controls.Add(this.infoAnswerBox);
             this.Info.Location = new System.Drawing.Point(4, 22);
             this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(309, 96);
+            this.Info.Size = new System.Drawing.Size(509, 171);
             this.Info.TabIndex = 2;
             this.Info.Text = "Information";
             this.Info.UseVisualStyleBackColor = true;
             // 
             // infoAnswerBox
             // 
-            this.infoAnswerBox.Location = new System.Drawing.Point(15, 9);
+            this.infoAnswerBox.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.infoAnswerBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.infoAnswerBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.infoAnswerBox.Font = new System.Drawing.Font("Anka/Coder", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.infoAnswerBox.Location = new System.Drawing.Point(20, 15);
             this.infoAnswerBox.Name = "infoAnswerBox";
-            this.infoAnswerBox.Size = new System.Drawing.Size(279, 74);
+            this.infoAnswerBox.Size = new System.Drawing.Size(471, 137);
             this.infoAnswerBox.TabIndex = 0;
             this.infoAnswerBox.Text = "";
             // 
-            // removeAllLoadedCardsToolStripMenuItem
+            // splitContainer1
             // 
-            this.removeAllLoadedCardsToolStripMenuItem.Name = "removeAllLoadedCardsToolStripMenuItem";
-            this.removeAllLoadedCardsToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.removeAllLoadedCardsToolStripMenuItem.Text = "Remove All Loaded Cards";
-            this.removeAllLoadedCardsToolStripMenuItem.Click += new System.EventHandler(this.removeAllLoadedCardsToolStripMenuItem_Click);
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.CardsList);
+            this.splitContainer1.Panel1.Controls.Add(this.SubjectLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.SubjectDropDown);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.QuestionLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Size = new System.Drawing.Size(786, 544);
+            this.splitContainer1.SplitterDistance = 259;
+            this.splitContainer1.SplitterWidth = 10;
+            this.splitContainer1.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 559);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.QuestionLabel);
-            this.Controls.Add(this.SubjectLabel);
-            this.Controls.Add(this.refreshButton);
-            this.Controls.Add(this.CardsList);
-            this.Controls.Add(this.SubjectDropDown);
+            this.ClientSize = new System.Drawing.Size(786, 568);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -303,9 +335,17 @@
             this.Single.ResumeLayout(false);
             this.Single.PerformLayout();
             this.Info.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.SplitContainer splitContainer1;
 
         private System.Windows.Forms.ToolStripMenuItem removeAllLoadedCardsToolStripMenuItem;
 
@@ -346,8 +386,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
 
         private System.Windows.Forms.Label SubjectLabel;
-
-        private System.Windows.Forms.Button refreshButton;
 
         #endregion
 

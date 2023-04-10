@@ -72,7 +72,8 @@ namespace SharpReview
                 }
 
                 cardInEdit.CorrectSingleAnswer = SingleAnswerInput.Text;
-                
+                cardInEdit.AnswerType =(AnswerType) FlashCardTypeCombo.SelectedItem;
+
             }
             
             this.Close();
