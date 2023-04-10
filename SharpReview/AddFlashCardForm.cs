@@ -7,6 +7,9 @@ namespace SharpReview
 {
     public partial class AddFlashCardForm : Form
     {
+        public bool isNewCard = true;
+
+        public FlashCard cardInEdit;
         public AddFlashCardForm()
         {
             InitializeComponent();
@@ -28,8 +31,43 @@ namespace SharpReview
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            FlashCard tempCard = new FlashCard();
-       
+            if (isNewCard)
+            {
+                FlashCard tempCard = new FlashCard();
+                tempCard.QuestionText = QuestionInput.Text;
+
+                if (newSubjectRadio.Checked)
+                {
+                    tempCard.Subject = NewSubjectInput.Text;
+                }
+                else
+                {
+                    tempCard.Subject = ExistingSubjectCombo.Text;
+                }
+
+                tempCard.CorrectSingleAnswer = SingleAnswerInput.Text;
+
+                Form1.GetCards().Add(tempCard);
+            }
+            else
+            {
+                cardInEdit.Subject = NewSubjectInput.Text;
+                
+                if (newSubjectRadio.Checked)
+                {
+                    cardInEdit .Subject = NewSubjectInput.Text;
+                }
+                else
+                {
+                    cardInEdit.Subject = ExistingSubjectCombo.Text;
+                }
+
+                cardInEdit.CorrectSingleAnswer = SingleAnswerInput.Text;
+                
+            }
+            
+            this.Close();
+
         }
     }
 }

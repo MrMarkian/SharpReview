@@ -33,10 +33,10 @@ namespace SharpReview
         {
             this.FlashCardTypeCombo = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ExistingSubjectCombo = new System.Windows.Forms.ComboBox();
-            this.newSubjectInput = new System.Windows.Forms.TextBox();
-            this.ChooseExistingRadio = new System.Windows.Forms.RadioButton();
             this.newSubjectRadio = new System.Windows.Forms.RadioButton();
+            this.ExistingSubjectCombo = new System.Windows.Forms.ComboBox();
+            this.NewSubjectInput = new System.Windows.Forms.TextBox();
+            this.ChooseExistingRadio = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.QuestionInput = new System.Windows.Forms.RichTextBox();
@@ -63,10 +63,10 @@ namespace SharpReview
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ExistingSubjectCombo);
-            this.groupBox1.Controls.Add(this.newSubjectInput);
-            this.groupBox1.Controls.Add(this.ChooseExistingRadio);
             this.groupBox1.Controls.Add(this.newSubjectRadio);
+            this.groupBox1.Controls.Add(this.ExistingSubjectCombo);
+            this.groupBox1.Controls.Add(this.NewSubjectInput);
+            this.groupBox1.Controls.Add(this.ChooseExistingRadio);
             this.groupBox1.Location = new System.Drawing.Point(12, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(464, 79);
@@ -74,20 +74,30 @@ namespace SharpReview
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Card Subject";
             // 
+            // newSubjectRadio
+            // 
+            this.newSubjectRadio.Location = new System.Drawing.Point(20, 21);
+            this.newSubjectRadio.Name = "newSubjectRadio";
+            this.newSubjectRadio.Size = new System.Drawing.Size(95, 15);
+            this.newSubjectRadio.TabIndex = 5;
+            this.newSubjectRadio.TabStop = true;
+            this.newSubjectRadio.Text = "New Subject";
+            this.newSubjectRadio.UseVisualStyleBackColor = true;
+            // 
             // ExistingSubjectCombo
             // 
             this.ExistingSubjectCombo.FormattingEnabled = true;
-            this.ExistingSubjectCombo.Location = new System.Drawing.Point(162, 53);
+            this.ExistingSubjectCombo.Location = new System.Drawing.Point(145, 49);
             this.ExistingSubjectCombo.Name = "ExistingSubjectCombo";
-            this.ExistingSubjectCombo.Size = new System.Drawing.Size(276, 21);
-            this.ExistingSubjectCombo.TabIndex = 3;
+            this.ExistingSubjectCombo.Size = new System.Drawing.Size(291, 21);
+            this.ExistingSubjectCombo.TabIndex = 4;
             // 
-            // newSubjectInput
+            // NewSubjectInput
             // 
-            this.newSubjectInput.Location = new System.Drawing.Point(165, 23);
-            this.newSubjectInput.Name = "newSubjectInput";
-            this.newSubjectInput.Size = new System.Drawing.Size(273, 20);
-            this.newSubjectInput.TabIndex = 2;
+            this.NewSubjectInput.Location = new System.Drawing.Point(145, 17);
+            this.NewSubjectInput.Name = "NewSubjectInput";
+            this.NewSubjectInput.Size = new System.Drawing.Size(292, 20);
+            this.NewSubjectInput.TabIndex = 3;
             // 
             // ChooseExistingRadio
             // 
@@ -98,16 +108,6 @@ namespace SharpReview
             this.ChooseExistingRadio.TabStop = true;
             this.ChooseExistingRadio.Text = "Choose Existing";
             this.ChooseExistingRadio.UseVisualStyleBackColor = true;
-            // 
-            // newSubjectRadio
-            // 
-            this.newSubjectRadio.Location = new System.Drawing.Point(18, 19);
-            this.newSubjectRadio.Name = "newSubjectRadio";
-            this.newSubjectRadio.Size = new System.Drawing.Size(103, 26);
-            this.newSubjectRadio.TabIndex = 0;
-            this.newSubjectRadio.TabStop = true;
-            this.newSubjectRadio.Text = "New Subject";
-            this.newSubjectRadio.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -152,7 +152,7 @@ namespace SharpReview
             this.groupBox3.Controls.Add(this.tabControl1);
             this.groupBox3.Location = new System.Drawing.Point(11, 250);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(463, 108);
+            this.groupBox3.Size = new System.Drawing.Size(463, 122);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Answer";
@@ -164,7 +164,7 @@ namespace SharpReview
             this.tabControl1.Location = new System.Drawing.Point(6, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(459, 83);
+            this.tabControl1.Size = new System.Drawing.Size(459, 97);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -173,7 +173,7 @@ namespace SharpReview
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(451, 57);
+            this.tabPage1.Size = new System.Drawing.Size(451, 71);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Single";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@ namespace SharpReview
             // 
             this.SingleAnswerInput.Location = new System.Drawing.Point(65, 6);
             this.SingleAnswerInput.Name = "SingleAnswerInput";
-            this.SingleAnswerInput.Size = new System.Drawing.Size(380, 45);
+            this.SingleAnswerInput.Size = new System.Drawing.Size(380, 59);
             this.SingleAnswerInput.TabIndex = 3;
             this.SingleAnswerInput.Text = "";
             // 
@@ -191,7 +191,7 @@ namespace SharpReview
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(451, 57);
+            this.tabPage2.Size = new System.Drawing.Size(451, 71);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Multi";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -217,6 +217,10 @@ namespace SharpReview
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.RadioButton newSubjectRadio;
+
+        private System.Windows.Forms.TextBox NewSubjectInput;
+
         private System.Windows.Forms.RichTextBox SingleAnswerInput;
 
         private System.Windows.Forms.TabControl tabControl1;
@@ -228,7 +232,6 @@ namespace SharpReview
         private System.Windows.Forms.Button SaveButton;
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton newSubjectRadio;
         private System.Windows.Forms.RadioButton ChooseExistingRadio;
         private System.Windows.Forms.TextBox newSubjectInput;
         private System.Windows.Forms.ComboBox ExistingSubjectCombo;

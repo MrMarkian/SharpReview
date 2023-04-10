@@ -10,7 +10,7 @@ namespace SharpReview.Data
     {
         public String QuestionText;
         public String CorrectSingleAnswer;
-        public List<String> CorrectMultiAnswers;
+        public List<(bool isCorrect, string AnswerText)> CorrectMultiAnswers;
         public List<String> PossibleAnswers;
 
         public AnswerType AnswerType;
@@ -27,6 +27,11 @@ namespace SharpReview.Data
             CorrectSingleAnswer = correctSingleAnswer;
             AnswerType = answerType;
             Subject = subject;
+        }
+
+        public bool CheckSingleAnswer(String answerText)
+        {
+            return CorrectSingleAnswer.Equals(answerText);
         }
 
         public override string ToString()
