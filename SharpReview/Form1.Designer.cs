@@ -37,16 +37,29 @@
             this.newFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.loadFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appendFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.refreshFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuestionLabel = new System.Windows.Forms.Label();
             this.AnswerInputBox = new System.Windows.Forms.TextBox();
             this.CheckAnswerButton = new System.Windows.Forms.Button();
-            this.editFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Single = new System.Windows.Forms.TabPage();
+            this.Multi = new System.Windows.Forms.TabPage();
+            this.Info = new System.Windows.Forms.TabPage();
+            this.infoAnswerBox = new System.Windows.Forms.RichTextBox();
+            this.removeAllLoadedCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.Single.SuspendLayout();
+            this.Info.SuspendLayout();
             this.SuspendLayout();
             // 
             // SubjectDropDown
@@ -87,7 +100,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.fileToolStripMenuItem});
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.fileToolStripMenuItem, this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(539, 24);
@@ -96,7 +109,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.newFlashCardToolStripMenuItem, this.editFlashCardToolStripMenuItem, this.toolStripSeparator3, this.loadFlashCardsToolStripMenuItem, this.saveFlashCardsToolStripMenuItem, this.toolStripSeparator1, this.refreshFlashCardsToolStripMenuItem, this.toolStripSeparator2, this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.newFlashCardToolStripMenuItem, this.toolStripSeparator3, this.loadFlashCardsToolStripMenuItem, this.appendFlashCardsToolStripMenuItem, this.saveFlashCardsToolStripMenuItem, this.toolStripSeparator1, this.refreshFlashCardsToolStripMenuItem, this.toolStripSeparator2, this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -104,50 +117,82 @@
             // newFlashCardToolStripMenuItem
             // 
             this.newFlashCardToolStripMenuItem.Name = "newFlashCardToolStripMenuItem";
-            this.newFlashCardToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.newFlashCardToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.newFlashCardToolStripMenuItem.Text = "New FlashCard";
             this.newFlashCardToolStripMenuItem.Click += new System.EventHandler(this.newFlashCardToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(173, 6);
             // 
             // loadFlashCardsToolStripMenuItem
             // 
             this.loadFlashCardsToolStripMenuItem.Name = "loadFlashCardsToolStripMenuItem";
-            this.loadFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.loadFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.loadFlashCardsToolStripMenuItem.Text = "Load FlashCards";
             this.loadFlashCardsToolStripMenuItem.Click += new System.EventHandler(this.loadFlashCardsToolStripMenuItem_Click_1);
+            // 
+            // appendFlashCardsToolStripMenuItem
+            // 
+            this.appendFlashCardsToolStripMenuItem.Name = "appendFlashCardsToolStripMenuItem";
+            this.appendFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.appendFlashCardsToolStripMenuItem.Text = "Append FlashCards";
+            this.appendFlashCardsToolStripMenuItem.Click += new System.EventHandler(this.appendFlashCardsToolStripMenuItem_Click);
             // 
             // saveFlashCardsToolStripMenuItem
             // 
             this.saveFlashCardsToolStripMenuItem.Name = "saveFlashCardsToolStripMenuItem";
-            this.saveFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.saveFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.saveFlashCardsToolStripMenuItem.Text = "Save FlashCards";
             this.saveFlashCardsToolStripMenuItem.Click += new System.EventHandler(this.saveFlashCardsToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // refreshFlashCardsToolStripMenuItem
             // 
             this.refreshFlashCardsToolStripMenuItem.Name = "refreshFlashCardsToolStripMenuItem";
-            this.refreshFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.refreshFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.refreshFlashCardsToolStripMenuItem.Text = "Refresh FlashCards";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(173, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.editFlashCardToolStripMenuItem, this.toolStripSeparator4, this.deleteFlashCardToolStripMenuItem, this.removeAllLoadedCardsToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // editFlashCardToolStripMenuItem
+            // 
+            this.editFlashCardToolStripMenuItem.Name = "editFlashCardToolStripMenuItem";
+            this.editFlashCardToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.editFlashCardToolStripMenuItem.Text = "Edit FlashCard";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(206, 6);
+            // 
+            // deleteFlashCardToolStripMenuItem
+            // 
+            this.deleteFlashCardToolStripMenuItem.Name = "deleteFlashCardToolStripMenuItem";
+            this.deleteFlashCardToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.deleteFlashCardToolStripMenuItem.Text = "Delete FlashCard";
+            this.deleteFlashCardToolStripMenuItem.Click += new System.EventHandler(this.deleteFlashCardToolStripMenuItem_Click_1);
             // 
             // QuestionLabel
             // 
@@ -160,14 +205,14 @@
             // 
             // AnswerInputBox
             // 
-            this.AnswerInputBox.Location = new System.Drawing.Point(211, 383);
+            this.AnswerInputBox.Location = new System.Drawing.Point(6, 23);
             this.AnswerInputBox.Name = "AnswerInputBox";
             this.AnswerInputBox.Size = new System.Drawing.Size(301, 20);
             this.AnswerInputBox.TabIndex = 7;
             // 
             // CheckAnswerButton
             // 
-            this.CheckAnswerButton.Location = new System.Drawing.Point(405, 436);
+            this.CheckAnswerButton.Location = new System.Drawing.Point(196, 63);
             this.CheckAnswerButton.Name = "CheckAnswerButton";
             this.CheckAnswerButton.Size = new System.Drawing.Size(107, 27);
             this.CheckAnswerButton.TabIndex = 8;
@@ -175,20 +220,72 @@
             this.CheckAnswerButton.UseVisualStyleBackColor = true;
             this.CheckAnswerButton.Click += new System.EventHandler(this.CheckAnswerButton_Click);
             // 
-            // editFlashCardToolStripMenuItem
+            // tabControl1
             // 
-            this.editFlashCardToolStripMenuItem.Name = "editFlashCardToolStripMenuItem";
-            this.editFlashCardToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.editFlashCardToolStripMenuItem.Text = "Edit FlashCard";
-            this.editFlashCardToolStripMenuItem.Click += new System.EventHandler(this.editFlashCardToolStripMenuItem_Click);
+            this.tabControl1.Controls.Add(this.Single);
+            this.tabControl1.Controls.Add(this.Multi);
+            this.tabControl1.Controls.Add(this.Info);
+            this.tabControl1.Location = new System.Drawing.Point(208, 261);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(317, 122);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 9;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            // 
+            // Single
+            // 
+            this.Single.Controls.Add(this.AnswerInputBox);
+            this.Single.Controls.Add(this.CheckAnswerButton);
+            this.Single.Location = new System.Drawing.Point(4, 22);
+            this.Single.Name = "Single";
+            this.Single.Padding = new System.Windows.Forms.Padding(3);
+            this.Single.Size = new System.Drawing.Size(309, 96);
+            this.Single.TabIndex = 0;
+            this.Single.Text = "Single Answer";
+            this.Single.UseVisualStyleBackColor = true;
+            // 
+            // Multi
+            // 
+            this.Multi.Location = new System.Drawing.Point(4, 22);
+            this.Multi.Name = "Multi";
+            this.Multi.Padding = new System.Windows.Forms.Padding(3);
+            this.Multi.Size = new System.Drawing.Size(309, 96);
+            this.Multi.TabIndex = 1;
+            this.Multi.Text = "Multi Answers";
+            this.Multi.UseVisualStyleBackColor = true;
+            // 
+            // Info
+            // 
+            this.Info.Controls.Add(this.infoAnswerBox);
+            this.Info.Location = new System.Drawing.Point(4, 22);
+            this.Info.Name = "Info";
+            this.Info.Size = new System.Drawing.Size(309, 96);
+            this.Info.TabIndex = 2;
+            this.Info.Text = "Information";
+            this.Info.UseVisualStyleBackColor = true;
+            // 
+            // infoAnswerBox
+            // 
+            this.infoAnswerBox.Location = new System.Drawing.Point(15, 9);
+            this.infoAnswerBox.Name = "infoAnswerBox";
+            this.infoAnswerBox.Size = new System.Drawing.Size(279, 74);
+            this.infoAnswerBox.TabIndex = 0;
+            this.infoAnswerBox.Text = "";
+            // 
+            // removeAllLoadedCardsToolStripMenuItem
+            // 
+            this.removeAllLoadedCardsToolStripMenuItem.Name = "removeAllLoadedCardsToolStripMenuItem";
+            this.removeAllLoadedCardsToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.removeAllLoadedCardsToolStripMenuItem.Text = "Remove All Loaded Cards";
+            this.removeAllLoadedCardsToolStripMenuItem.Click += new System.EventHandler(this.removeAllLoadedCardsToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 559);
-            this.Controls.Add(this.CheckAnswerButton);
-            this.Controls.Add(this.AnswerInputBox);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.QuestionLabel);
             this.Controls.Add(this.SubjectLabel);
             this.Controls.Add(this.refreshButton);
@@ -202,11 +299,31 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.Single.ResumeLayout(false);
+            this.Single.PerformLayout();
+            this.Info.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.ToolStripMenuItem removeAllLoadedCardsToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem appendFlashCardsToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem deleteFlashCardToolStripMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem editFlashCardToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+
+        private System.Windows.Forms.TabPage Info;
+        private System.Windows.Forms.RichTextBox infoAnswerBox;
+
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Single;
+        private System.Windows.Forms.TabPage Multi;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem loadFlashCardsToolStripMenuItem;

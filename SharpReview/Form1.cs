@@ -28,20 +28,6 @@ namespace SharpReview
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FlashCard testCard = new FlashCard();
-            testCard.Subject = "SDLC - Project Planning";
-            testCard.QuestionText = "Why did the chicken cross the road?";
-            testCard.CorrectSingleAnswer = "To get to the other side";
-            testCard.AnswerType = AnswerType.SingleAnswer;
-            _flashcards.Add(testCard);
-            
-            FlashCard testCard2 = new FlashCard();
-            testCard2.Subject = "SDLC - Design";
-            testCard2.QuestionText = "Can a queef smell of fish?";
-            testCard2.CorrectSingleAnswer = "yes";
-            testCard2.AnswerType = AnswerType.SingleAnswer;
-            _flashcards.Add(testCard2);
-            
             
             foreach (var card in _flashcards)
             {
@@ -104,9 +90,31 @@ namespace SharpReview
                 QuestionLabel.Text = "";
                 return;
             }
-               
-
+            
             FlashCard _selectedCard = (FlashCard)CardsList.SelectedItem;
+
+            tabControl1.TabPages.Clear();
+            
+            
+            switch (_selectedCard.AnswerType)
+            {
+                case AnswerType.InformationOnly:
+                    tabControl1.TabPages.Add(Info);
+                    infoAnswerBox.Text = _selectedCard.CorrectSingleAnswer;
+                    break;
+                case AnswerType.SingleAnswer:
+                    tabControl1.TabPages.Add(Single);
+                    break;
+                case AnswerType.MultipleChoice:
+                    tabControl1.TabPages.Add(Multi);
+                    break;
+                default:
+                    throw new Exception("Incorrect AnswerType");
+                
+            }
+
+            
+            
             QuestionLabel.Text = _selectedCard.QuestionText;
         }
 
@@ -130,7 +138,15 @@ namespace SharpReview
                 string json = System.IO.File.ReadAllText(fileDialog.FileName);
                 _flashcards = JsonConvert.DeserializeObject<List<FlashCard>>(json);
             }
+            else
+            {
+                return;
+            }
             refreshButton_Click(null, null);
+            if (SubjectDropDown.SelectedIndex < 0)
+            {
+                SubjectDropDown.SelectedIndex = 0;
+            }
         }
 
         private void saveFlashCardsToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -159,6 +175,68 @@ namespace SharpReview
             editngForm.cardInEdit =  (FlashCard)CardsList.SelectedItem;
             editngForm.isNewCard = false;
             editngForm.ShowDialog();
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            e.Cancel = true;
+       
+        }
+
+ 
+        private void deleteFlashCardToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            
+            var confirmResult =  MessageBox.Show("Are you sure to delete this item ??",
+                "Confirm Delete!!",
+                MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                _flashcards.Remove((FlashCard)CardsList.SelectedItem);
+            }
+            else
+            {
+                return;
+            }
+           
+        }
+
+        private void appendFlashCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+            if (fileDialog.FileName != "")
+            {
+               
+                string json = System.IO.File.ReadAllText(fileDialog.FileName);
+                _flashcards.AddRange(JsonConvert.DeserializeObject<List<FlashCard>>(json));
+            }
+            else
+            {
+                return;
+            }
+            refreshButton_Click(null, null);
+            if (SubjectDropDown.SelectedIndex < 0)
+            {
+                SubjectDropDown.SelectedIndex = 0;
+            }
+        }
+
+        private void removeAllLoadedCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult =  MessageBox.Show("Are you sure to remove all FlashCards?",
+                "Confirm Delete!!",
+                MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+               _flashcards.Clear();
+               CardsList.Items.Clear();
+               SubjectDropDown.Items.Clear();
+            }
+            else
+            {
+               
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ namespace SharpReview.Data
         public FlashCard()
         {
             
+ 
         }
 
         public FlashCard(string questionText, string correctSingleAnswer, AnswerType answerType, string subject)

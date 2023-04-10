@@ -54,6 +54,7 @@ namespace SharpReview
                 }
 
                 tempCard.CorrectSingleAnswer = SingleAnswerInput.Text;
+                tempCard.AnswerType =(AnswerType) FlashCardTypeCombo.SelectedItem;
 
                 Form1.GetCards().Add(tempCard);
             }
