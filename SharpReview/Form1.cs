@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpReview.Data;
+using Newtonsoft.Json;
 
 namespace SharpReview
 {
@@ -31,12 +32,14 @@ namespace SharpReview
             testCard.Subject = "SDLC - Project Planning";
             testCard.QuestionText = "Why did the chicken cross the road?";
             testCard.CorrectSingleAnswer = "To get to the other side";
+            testCard.AnswerType = AnswerType.SingleAnswer;
             _flashcards.Add(testCard);
             
             FlashCard testCard2 = new FlashCard();
             testCard2.Subject = "SDLC - Design";
             testCard2.QuestionText = "Can a queef smell of fish?";
             testCard2.CorrectSingleAnswer = "yes";
+            testCard2.AnswerType = AnswerType.SingleAnswer;
             _flashcards.Add(testCard2);
             
             
@@ -60,16 +63,18 @@ namespace SharpReview
                     CardsList.Items.Add(card);
                 }
             }
-        }
 
-       
-        private void NewFlashCardButton_Click(object sender, EventArgs e)
-        {
-          
+            if (CardsList.Items.Count > 0)
+            {
+                CardsList.SelectedIndex = 0;
+            }
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
+            int selectedSubject = SubjectDropDown.SelectedIndex;
+            int selectedCardIndex = CardsList.SelectedIndex;
+            
             SubjectDropDown.Items.Clear();
             
             foreach (var card in _flashcards)
@@ -79,8 +84,10 @@ namespace SharpReview
                     SubjectDropDown.Items.Add(card.Subject);
                 }
             }
-            
-            
+
+            SubjectDropDown.SelectedIndex = selectedSubject;
+            CardsList.SelectedIndex = selectedCardIndex;
+
         }
 
         private void newFlashCardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,15 +99,66 @@ namespace SharpReview
 
         private void CardsList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (CardsList.SelectedIndex < 0)
+            {
+                QuestionLabel.Text = "";
+                return;
+            }
+               
+
             FlashCard _selectedCard = (FlashCard)CardsList.SelectedItem;
             QuestionLabel.Text = _selectedCard.QuestionText;
         }
 
         private void CheckAnswerButton_Click(object sender, EventArgs e)
         {
+            if(CardsList.SelectedIndex < 0)
+                return;
+            
             FlashCard _selectedCard = (FlashCard)CardsList.SelectedItem;
             var answer =  _selectedCard.CheckSingleAnswer(AnswerInputBox.Text);
             MessageBox.Show("Your Answer is: " + answer);
+        }
+
+        private void LoadFlashCards()
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+            if (fileDialog.FileName != "")
+            {
+                _flashcards.Clear();
+                string json = System.IO.File.ReadAllText(fileDialog.FileName);
+                _flashcards = JsonConvert.DeserializeObject<List<FlashCard>>(json);
+            }
+            refreshButton_Click(null, null);
+        }
+
+        private void saveFlashCardsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string FlashCardsInJson =JsonConvert.SerializeObject(_flashcards);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save Flashcards to Json";
+            saveFileDialog.ShowDialog();
+
+            if (saveFileDialog.FileName != "")
+            {
+                System.IO.File.WriteAllText(saveFileDialog.FileName,  FlashCardsInJson);
+            }
+            
+        }
+
+   
+        private void loadFlashCardsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            LoadFlashCards();
+        }
+
+        private void editFlashCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddFlashCardForm editngForm = new AddFlashCardForm();
+            editngForm.cardInEdit =  (FlashCard)CardsList.SelectedItem;
+            editngForm.isNewCard = false;
+            editngForm.ShowDialog();
         }
     }
 }

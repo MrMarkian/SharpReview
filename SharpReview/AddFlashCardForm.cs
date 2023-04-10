@@ -27,6 +27,14 @@ namespace SharpReview
                 }
                 
             }
+
+            if (cardInEdit != null)
+            {
+                QuestionInput.Text = cardInEdit.QuestionText;
+                SingleAnswerInput.Text = cardInEdit.CorrectSingleAnswer;
+                FlashCardTypeCombo.SelectedItem = cardInEdit.AnswerType;
+                ExistingSubjectCombo.SelectedItem = cardInEdit.Subject;
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

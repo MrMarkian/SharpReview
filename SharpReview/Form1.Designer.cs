@@ -35,6 +35,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.loadFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.refreshFlashCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +45,7 @@
             this.QuestionLabel = new System.Windows.Forms.Label();
             this.AnswerInputBox = new System.Windows.Forms.TextBox();
             this.CheckAnswerButton = new System.Windows.Forms.Button();
+            this.editFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +96,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.newFlashCardToolStripMenuItem, this.saveFlashCardsToolStripMenuItem, this.toolStripSeparator1, this.refreshFlashCardsToolStripMenuItem, this.toolStripSeparator2, this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.newFlashCardToolStripMenuItem, this.editFlashCardToolStripMenuItem, this.toolStripSeparator3, this.loadFlashCardsToolStripMenuItem, this.saveFlashCardsToolStripMenuItem, this.toolStripSeparator1, this.refreshFlashCardsToolStripMenuItem, this.toolStripSeparator2, this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -105,11 +108,24 @@
             this.newFlashCardToolStripMenuItem.Text = "New FlashCard";
             this.newFlashCardToolStripMenuItem.Click += new System.EventHandler(this.newFlashCardToolStripMenuItem_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(170, 6);
+            // 
+            // loadFlashCardsToolStripMenuItem
+            // 
+            this.loadFlashCardsToolStripMenuItem.Name = "loadFlashCardsToolStripMenuItem";
+            this.loadFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.loadFlashCardsToolStripMenuItem.Text = "Load FlashCards";
+            this.loadFlashCardsToolStripMenuItem.Click += new System.EventHandler(this.loadFlashCardsToolStripMenuItem_Click_1);
+            // 
             // saveFlashCardsToolStripMenuItem
             // 
             this.saveFlashCardsToolStripMenuItem.Name = "saveFlashCardsToolStripMenuItem";
             this.saveFlashCardsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.saveFlashCardsToolStripMenuItem.Text = "Save FlashCards";
+            this.saveFlashCardsToolStripMenuItem.Click += new System.EventHandler(this.saveFlashCardsToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
@@ -135,6 +151,7 @@
             // 
             // QuestionLabel
             // 
+            this.QuestionLabel.Font = new System.Drawing.Font("Anka/Coder", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.QuestionLabel.Location = new System.Drawing.Point(214, 100);
             this.QuestionLabel.Name = "QuestionLabel";
             this.QuestionLabel.Size = new System.Drawing.Size(312, 115);
@@ -158,6 +175,13 @@
             this.CheckAnswerButton.UseVisualStyleBackColor = true;
             this.CheckAnswerButton.Click += new System.EventHandler(this.CheckAnswerButton_Click);
             // 
+            // editFlashCardToolStripMenuItem
+            // 
+            this.editFlashCardToolStripMenuItem.Name = "editFlashCardToolStripMenuItem";
+            this.editFlashCardToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.editFlashCardToolStripMenuItem.Text = "Edit FlashCard";
+            this.editFlashCardToolStripMenuItem.Click += new System.EventHandler(this.editFlashCardToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +195,7 @@
             this.Controls.Add(this.CardsList);
             this.Controls.Add(this.SubjectDropDown);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "SharpReview";
@@ -180,6 +205,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem editFlashCardToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem loadFlashCardsToolStripMenuItem;
 
         private System.Windows.Forms.TextBox AnswerInputBox;
         private System.Windows.Forms.Button CheckAnswerButton;

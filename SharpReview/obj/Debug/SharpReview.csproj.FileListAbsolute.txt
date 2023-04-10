@@ -10,3 +10,6 @@ C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.exe
 C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.pdb
 C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.Form1.resources
 C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.AddFlashCardForm.resources
+C:\GIT\SharpReview\SharpReview\bin\Debug\Newtonsoft.Json.dll
+C:\GIT\SharpReview\SharpReview\bin\Debug\Newtonsoft.Json.xml
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.csproj.CopyComplete
