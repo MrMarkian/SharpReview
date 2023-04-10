@@ -47,6 +47,9 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteFlashCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAllLoadedCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flashQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enabledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showFlashQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuestionLabel = new System.Windows.Forms.Label();
             this.AnswerInputBox = new System.Windows.Forms.TextBox();
             this.CheckAnswerButton = new System.Windows.Forms.Button();
@@ -99,7 +102,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.fileToolStripMenuItem, this.editToolStripMenuItem});
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.fileToolStripMenuItem, this.editToolStripMenuItem, this.flashQuestionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(786, 24);
@@ -201,13 +204,35 @@
             this.removeAllLoadedCardsToolStripMenuItem.Text = "Remove All Loaded Cards";
             this.removeAllLoadedCardsToolStripMenuItem.Click += new System.EventHandler(this.removeAllLoadedCardsToolStripMenuItem_Click);
             // 
+            // flashQuestionsToolStripMenuItem
+            // 
+            this.flashQuestionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.enabledToolStripMenuItem, this.showFlashQuestionToolStripMenuItem});
+            this.flashQuestionsToolStripMenuItem.Name = "flashQuestionsToolStripMenuItem";
+            this.flashQuestionsToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.flashQuestionsToolStripMenuItem.Text = "Flash Questions";
+            // 
+            // enabledToolStripMenuItem
+            // 
+            this.enabledToolStripMenuItem.Checked = true;
+            this.enabledToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.enabledToolStripMenuItem.Name = "enabledToolStripMenuItem";
+            this.enabledToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.enabledToolStripMenuItem.Text = "Enabled";
+            // 
+            // showFlashQuestionToolStripMenuItem
+            // 
+            this.showFlashQuestionToolStripMenuItem.Name = "showFlashQuestionToolStripMenuItem";
+            this.showFlashQuestionToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.showFlashQuestionToolStripMenuItem.Text = "Show Flash Question";
+            this.showFlashQuestionToolStripMenuItem.Click += new System.EventHandler(this.testCardToolStripMenuItem_Click);
+            // 
             // QuestionLabel
             // 
             this.QuestionLabel.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionLabel.Font = new System.Drawing.Font("Anka/Coder", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.QuestionLabel.Location = new System.Drawing.Point(24, 73);
             this.QuestionLabel.Name = "QuestionLabel";
-            this.QuestionLabel.Size = new System.Drawing.Size(443, 267);
+            this.QuestionLabel.Size = new System.Drawing.Size(413, 267);
             this.QuestionLabel.TabIndex = 6;
             this.QuestionLabel.Text = "Question";
             // 
@@ -331,6 +356,7 @@
             this.Name = "Form1";
             this.Text = "SharpReview";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -344,6 +370,12 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem showFlashQuestionToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem enabledToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem flashQuestionsToolStripMenuItem;
 
         private System.Windows.Forms.Label label1;
 

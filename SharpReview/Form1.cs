@@ -15,6 +15,9 @@ namespace SharpReview
     public partial class Form1 : Form
     {
         static List<FlashCard> _flashcards = new List<FlashCard>();
+        Random random = new Random();
+
+        private Timer NotificationTimer = new Timer();
 
         public Form1()
         {
@@ -37,6 +40,22 @@ namespace SharpReview
                 }
             }
             tabControl1.TabPages.Clear();
+            NotificationTimer.Interval = 22920;
+            NotificationTimer.Tick += new EventHandler(PopupNotification);
+            this.SizeChanged += new EventHandler(CheckIfMinned);
+        }
+
+        private void CheckIfMinned(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized && enabledToolStripMenuItem.Enabled)
+            {
+                NotificationTimer.Start();
+          
+            }
+            else
+            {
+                NotificationTimer.Stop();
+            }
         }
 
         private void SubjectDropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -245,6 +264,29 @@ namespace SharpReview
             }
         }
 
-      
+
+        private void testCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int Rndcard = random.Next(_flashcards.Count);
+            FlashCard testCard = _flashcards[Rndcard];
+            NotificationForm nForm = new NotificationForm();
+            nForm.QuestionText = testCard.QuestionText;
+            nForm.AnswerText = testCard.CorrectSingleAnswer;
+            nForm.SubjectText = testCard.Subject;
+            nForm.Width = 600;
+            nForm.Height = 600;
+            nForm.Show();
+
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void PopupNotification(object sender, EventArgs eventArgs)
+        {
+            testCardToolStripMenuItem_Click(sender, eventArgs);
+        }
     }
 }

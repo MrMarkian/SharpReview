@@ -13,3 +13,4 @@ C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.AddFlashCardForm.resources
 C:\GIT\SharpReview\SharpReview\bin\Debug\Newtonsoft.Json.dll
 C:\GIT\SharpReview\SharpReview\bin\Debug\Newtonsoft.Json.xml
 C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.csproj.CopyComplete
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.NotificationForm.resources
