@@ -28,7 +28,7 @@ namespace SharpReview
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            QuestionLabel.Text = "Please create a new card, or load existing cards.";
             foreach (var card in _flashcards)
             {
                 if (!SubjectDropDown.Items.Contains(card.Subject))
@@ -36,6 +36,7 @@ namespace SharpReview
                     SubjectDropDown.Items.Add(card.Subject);
                 }
             }
+            tabControl1.TabPages.Clear();
         }
 
         private void SubjectDropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +80,11 @@ namespace SharpReview
         private void newFlashCardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddFlashCardForm newCard = new AddFlashCardForm();
+            if (SubjectDropDown.SelectedIndex >= 0)
+            {
+                newCard.currentSubject = SubjectDropDown.SelectedItem.ToString();
+            }
+
             newCard.ShowDialog();
             refreshButton_Click(null, null);
         }

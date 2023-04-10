@@ -10,6 +10,7 @@ namespace SharpReview
         public bool isNewCard = true;
 
         public FlashCard cardInEdit;
+        public string currentSubject;
         public AddFlashCardForm()
         {
             InitializeComponent();
@@ -34,6 +35,35 @@ namespace SharpReview
                 SingleAnswerInput.Text = cardInEdit.CorrectSingleAnswer;
                 FlashCardTypeCombo.SelectedItem = cardInEdit.AnswerType;
                 ExistingSubjectCombo.SelectedItem = cardInEdit.Subject;
+            }
+
+            if (isNewCard)
+            {
+                this.Text = "New Flash Card";
+                if (this.currentSubject != String.Empty)
+                {
+                    ChooseExistingRadio.Checked = true;
+                    newSubjectRadio.Checked = false;
+                    if (currentSubject != null)
+                    {
+                        foreach (var subject in ExistingSubjectCombo.Items)
+                        {
+                            if (subject.ToString() == currentSubject)
+                            {
+                                ExistingSubjectCombo.SelectedItem = subject;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        newSubjectRadio.Checked = true;
+                    }
+                }
+                
+            }
+            else
+            {
+                this.Text = "Editing: " + cardInEdit.QuestionText;
             }
         }
 
@@ -78,6 +108,22 @@ namespace SharpReview
             
             this.Close();
 
+        }
+
+        private void ChooseExistingRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChooseExistingRadio.Checked)
+            {
+                ExistingSubjectCombo.Enabled = ChooseExistingRadio.Checked;
+                NewSubjectInput.Enabled = false;
+                
+            }
+            else
+            {
+                NewSubjectInput.Enabled = true;
+                
+            }
+            
         }
     }
 }

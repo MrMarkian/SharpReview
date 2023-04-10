@@ -70,6 +70,7 @@
             // SubjectDropDown
             // 
             this.SubjectDropDown.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.SubjectDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SubjectDropDown.FormattingEnabled = true;
             this.SubjectDropDown.Location = new System.Drawing.Point(11, 34);
             this.SubjectDropDown.Name = "SubjectDropDown";
@@ -86,6 +87,7 @@
             this.CardsList.Size = new System.Drawing.Size(227, 446);
             this.CardsList.TabIndex = 1;
             this.CardsList.SelectedIndexChanged += new System.EventHandler(this.CardsList_SelectedIndexChanged);
+            this.CardsList.DoubleClick += new System.EventHandler(this.editFlashCardToolStripMenuItem_Click);
             // 
             // SubjectLabel
             // 
@@ -205,7 +207,7 @@
             this.QuestionLabel.Font = new System.Drawing.Font("Anka/Coder", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.QuestionLabel.Location = new System.Drawing.Point(24, 73);
             this.QuestionLabel.Name = "QuestionLabel";
-            this.QuestionLabel.Size = new System.Drawing.Size(455, 267);
+            this.QuestionLabel.Size = new System.Drawing.Size(443, 267);
             this.QuestionLabel.TabIndex = 6;
             this.QuestionLabel.Text = "Question";
             // 
@@ -268,7 +270,7 @@
             this.Multi.Location = new System.Drawing.Point(4, 22);
             this.Multi.Name = "Multi";
             this.Multi.Padding = new System.Windows.Forms.Padding(3);
-            this.Multi.Size = new System.Drawing.Size(509, 171);
+            this.Multi.Size = new System.Drawing.Size(505, 171);
             this.Multi.TabIndex = 1;
             this.Multi.Text = "Multi Answers";
             this.Multi.UseVisualStyleBackColor = true;
@@ -278,7 +280,7 @@
             this.Info.Controls.Add(this.infoAnswerBox);
             this.Info.Location = new System.Drawing.Point(4, 22);
             this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(509, 171);
+            this.Info.Size = new System.Drawing.Size(505, 171);
             this.Info.TabIndex = 2;
             this.Info.Text = "Information";
             this.Info.UseVisualStyleBackColor = true;
@@ -291,7 +293,7 @@
             this.infoAnswerBox.Font = new System.Drawing.Font("Anka/Coder", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.infoAnswerBox.Location = new System.Drawing.Point(20, 15);
             this.infoAnswerBox.Name = "infoAnswerBox";
-            this.infoAnswerBox.Size = new System.Drawing.Size(471, 137);
+            this.infoAnswerBox.Size = new System.Drawing.Size(467, 137);
             this.infoAnswerBox.TabIndex = 0;
             this.infoAnswerBox.Text = "";
             // 
