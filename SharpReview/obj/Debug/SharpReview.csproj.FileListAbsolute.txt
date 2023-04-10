@@ -1,0 +1,12 @@
+C:\GIT\SharpReview\SharpReview\bin\Debug\SharpReview.exe.config
+C:\GIT\SharpReview\SharpReview\bin\Debug\SharpReview.exe
+C:\GIT\SharpReview\SharpReview\bin\Debug\SharpReview.pdb
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.csproj.AssemblyReference.cache
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.csproj.SuggestedBindingRedirects.cache
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.Properties.Resources.resources
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.csproj.GenerateResource.cache
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.csproj.CoreCompileInputs.cache
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.exe
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.pdb
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.Form1.resources
+C:\GIT\SharpReview\SharpReview\obj\Debug\SharpReview.AddFlashCardForm.resources
